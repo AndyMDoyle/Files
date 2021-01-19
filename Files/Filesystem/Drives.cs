@@ -71,8 +71,8 @@ namespace Files.Filesystem
                 }
             }
 
-            await GetVirtualDrivesListAsync();
             StartDeviceWatcher();
+            await GetVirtualDrivesListAsync();
             driveEnumInProgress = false;
         }
 
@@ -302,6 +302,7 @@ namespace Files.Filesystem
                     drivesList.Add(cloudProviderItem);
                 }
             }
+            DeviceWatcher_EnumerationCompleted(null, null);
         }
 
         private DriveType GetDriveType(DriveInfo drive)
