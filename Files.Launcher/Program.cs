@@ -334,8 +334,7 @@ namespace FilesFullTrust
                             var accountKeyName = @$"{oneDriveAccountsKey.Name}\{account}";
                             var displayName = (string)Registry.GetValue(accountKeyName, "DisplayName", null);
                             var userFolder = (string)Registry.GetValue(accountKeyName, "UserFolder", null);
-
-                            var accountName = string.IsNullOrWhiteSpace(displayName) ? "OneDrive - Personal" : $"OneDrive - {displayName}";
+                            var accountName = string.IsNullOrWhiteSpace(displayName) ? "OneDrive" : $"OneDrive - {displayName}";
                             if (!string.IsNullOrWhiteSpace(userFolder) && !oneDriveAccounts.ContainsKey(accountName))
                             {
                                 oneDriveAccounts.Add(accountName, userFolder);
